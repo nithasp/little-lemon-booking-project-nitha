@@ -25,7 +25,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env NODE_OPTIONS=--no-deprecation react-scripts test",
+    "test:once": "cross-env NODE_OPTIONS=--no-deprecation react-scripts test --watchAll=false --passWithNoTests",
+    "test:contact": "cross-env NODE_OPTIONS=--no-deprecation react-scripts test --watchAll=false --testPathPattern=ContactMeSection.test",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -41,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "prettier": "^2.7.1"
   }
 }
